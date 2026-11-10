@@ -1,0 +1,43 @@
+name: SecureCorp - Pipeline DevSecOps
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-scan:
+    name: Build & Vulnerability Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout codigo
+        uses: actions/checkout@v4
+
+      - name: Build imagen vulnerable (demo)
+        run: |
+          docker build -t securecorp-vulnerable:test -f fase2/Dockerfile.vulnerable fase2/
+
+      - name: Escaneo de vulnerabilidades con Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'securecorp-vulnerable:test'
+          format: 'table'
+          exit-code: '1'
+          severity: 'CRITICAL,HIGH'
+
+      - name: Resumen de seguridad
+        if: always()
+        run: |
+          echo "============================================"
+          echo " SecureCorp - Resumen del Pipeline"
+          echo "============================================"
+          echo ""
+          echo "Si el paso anterior fallo, significa que Trivy"
+          echo "detecto vulnerabilidades CRITICAL o HIGH en la"
+          echo "imagen Docker, bloqueando el despliegue."
+          echo ""
+          echo "Esto demuestra el principio DevSecOps:"
+          echo "  Security as Code -> Shift Left"
+          echo "============================================"

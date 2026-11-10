@@ -1,0 +1,9 @@
+# ============================================================
+# Imagen INTENCIONALMENTE VULNERABLE para demo de DevSecOps
+# Trivy detectara CVEs criticas en node:14-alpine (EOL)
+# ============================================================
+FROM node:14-alpine
+
+RUN echo "Esta imagen usa Node.js 14 (EOL) con vulnerabilidades conocidas" > /app-info.txt
+
+CMD ["node", "-e", "console.log('Imagen vulnerable para demo de CI/CD')"]

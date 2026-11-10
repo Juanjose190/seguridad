@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureCorp - Portal Corporativo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a0a1a; color: #e0e0e0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .container { text-align: center; padding: 2rem; }
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #00d4ff; }
+        .subtitle { color: #888; font-size: 1.1rem; margin-bottom: 2rem; }
+        .status { background: #111; border: 1px solid #333; border-radius: 8px; padding: 1.5rem; margin: 1rem 0; }
+        .status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 600; }
+        .vulnerable { background: #ff4444; color: #fff; }
+        .info { color: #aaa; font-size: 0.9rem; margin-top: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SecureCorp</h1>
+        <p class="subtitle">Portal Corporativo - Servidor Web</p>
+        <div class="status">
+            <p>Estado del servidor: <span class="status-badge vulnerable">SIN BASTIONAR</span></p>
+            <p class="info">Este servidor NO tiene cabeceras de seguridad configuradas.</p>
+            <p class="info">Fase 1: Infraestructura base desplegada.</p>
+        </div>
+        <div class="status">
+            <p><strong>Zona:</strong> Red Publica (DMZ)</p>
+            <p><strong>IP:</strong> 172.20.0.10</p>
+            <p><strong>Puerto:</strong> 8080</p>
+        </div>
+    </div>
+</body>
+</html>

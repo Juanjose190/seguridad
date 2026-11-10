@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureCorp - Servidor Bastionado</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a0a1a; color: #e0e0e0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .container { text-align: center; padding: 2rem; }
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #00d4ff; }
+        .subtitle { color: #888; font-size: 1.1rem; margin-bottom: 2rem; }
+        .status { background: #111; border: 1px solid #333; border-radius: 8px; padding: 1.5rem; margin: 1rem 0; }
+        .status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 600; }
+        .seguro { background: #00c853; color: #000; }
+        .header-item { display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #222; font-size: 0.9rem; }
+        .header-name { color: #00d4ff; }
+        .header-value { color: #00c853; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SecureCorp</h1>
+        <p class="subtitle">Portal Corporativo - Servidor Bastionado</p>
+        <div class="status">
+            <p>Estado del servidor: <span class="status-badge seguro">BASTIONADO</span></p>
+        </div>
+        <div class="status">
+            <p style="margin-bottom: 1rem; font-weight: 600;">Cabeceras de Seguridad Activas:</p>
+            <div class="header-item"><span class="header-name">server_tokens</span><span class="header-value">off</span></div>
+            <div class="header-item"><span class="header-name">X-Frame-Options</span><span class="header-value">SAMEORIGIN</span></div>
+            <div class="header-item"><span class="header-name">X-Content-Type-Options</span><span class="header-value">nosniff</span></div>
+            <div class="header-item"><span class="header-name">X-XSS-Protection</span><span class="header-value">1; mode=block</span></div>
+            <div class="header-item"><span class="header-name">Referrer-Policy</span><span class="header-value">strict-origin-when-cross-origin</span></div>
+        </div>
+    </div>
+</body>
+</html>
