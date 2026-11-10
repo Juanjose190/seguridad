@@ -16,7 +16,7 @@ Breve descripcion del objetivo de la auditoria, alcance y hallazgos principales.
 ## 2. Fase 1 - Infraestructura Base
 
 ### 2.1 Arquitectura Desplegada
-- Descripcion de las redes Docker (publica: 172.20.0.0/24, interna: 172.21.0.0/24)
+- Descripcion de las redes Docker (publica: 172.28.0.0/24, interna: 172.29.0.0/24)
 - Servicios desplegados y sus roles
 - Captura: `docker compose ps`
 
@@ -32,7 +32,7 @@ Breve descripcion del objetivo de la auditoria, alcance y hallazgos principales.
 ### 3.1 Hardening del Servidor Web
 - Cabeceras de seguridad implementadas
 - Comparacion de respuestas HTTP (antes/despues)
-- Captura: `curl -I localhost:8080` vs `curl -I localhost:8085`
+- Captura: `curl -I localhost:8080` vs `curl -I localhost:8086`
 
 ### 3.2 Motor de Control de Acceso (NAC)
 - Resultado de la ejecucion de `motor_control.py`

@@ -14,7 +14,7 @@ echo "[PASO 1] Creando archivo con datos sensibles..."
 echo "Usuario: admin_securecorp
 Password: S3cur3C0rp!2026
 API_KEY: sk-prod-a8f3b2c1d4e5f6789
-DB_HOST: 172.21.0.20
+DB_HOST: 172.29.0.20
 DB_PASSWORD: r00t_db_s3cr3t" > datos_sensibles.txt
 
 echo "  Archivo creado: datos_sensibles.txt"

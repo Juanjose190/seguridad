@@ -27,7 +27,7 @@ echo ""
 if command -v ab &> /dev/null; then
     ab -n $TOTAL_REQUESTS -c $CONCURRENCIA -q http://localhost:8080/ 2>/dev/null | grep -E "Requests per second|Failed requests|Non-2xx|Time taken"
 elif docker ps | grep -q securecorp-atacante; then
-    docker exec securecorp-atacante ab -n $TOTAL_REQUESTS -c $CONCURRENCIA -q http://172.20.0.10:80/ 2>/dev/null | grep -E "Requests per second|Failed requests|Non-2xx|Time taken"
+    docker exec securecorp-atacante ab -n $TOTAL_REQUESTS -c $CONCURRENCIA -q http://172.28.0.10:80/ 2>/dev/null | grep -E "Requests per second|Failed requests|Non-2xx|Time taken"
 else
     echo "[!] Apache Benchmark no disponible. Instalar con: apt install apache2-utils"
     echo "    O ejecutar: docker compose up -d (para usar el contenedor atacante)"
@@ -45,7 +45,7 @@ echo ""
 if command -v ab &> /dev/null; then
     ab -n $TOTAL_REQUESTS -c $CONCURRENCIA -q http://localhost:8090/ 2>/dev/null | grep -E "Requests per second|Failed requests|Non-2xx|Time taken"
 elif docker ps | grep -q securecorp-atacante; then
-    docker exec securecorp-atacante ab -n $TOTAL_REQUESTS -c $CONCURRENCIA -q http://172.20.0.30:80/ 2>/dev/null | grep -E "Requests per second|Failed requests|Non-2xx|Time taken"
+    docker exec securecorp-atacante ab -n $TOTAL_REQUESTS -c $CONCURRENCIA -q http://172.28.0.30:80/ 2>/dev/null | grep -E "Requests per second|Failed requests|Non-2xx|Time taken"
 else
     echo "[!] Apache Benchmark no disponible."
 fi

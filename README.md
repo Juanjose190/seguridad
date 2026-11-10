@@ -17,11 +17,11 @@ Docker, Nginx, Python y GitHub Actions.
 ```
 ┌─────────────────────────────────────────────┐
 │              RED PUBLICA (DMZ)              │
-│              172.20.0.0/24                  │
+│              172.28.0.0/24                  │
 │                                             │
 │  ┌──────────┐ ┌──────────┐ ┌──────────┐   │
 │  │ Web Base │ │Bastionado│ │ Defensa  │   │
-│  │ :8080    │ │ :8085    │ │ :8090    │   │
+│  │ :8080    │ │ :8086    │ │ :8090    │   │
 │  │ .0.10    │ │ .0.20    │ │ .0.30    │   │
 │  └──────────┘ └──────────┘ └──────────┘   │
 │                                             │
@@ -33,7 +33,7 @@ Docker, Nginx, Python y GitHub Actions.
 
 ┌─────────────────────────────────────────────┐
 │             RED INTERNA (LAN)              │
-│             172.21.0.0/24                  │
+│             172.29.0.0/24                  │
 │                                             │
 │  ┌──────────────┐                          │
 │  │  Juice Shop  │  (App Vulnerable)        │
@@ -85,7 +85,7 @@ docker compose up -d
 | Servicio         | URL                    | Descripcion                  |
 |-----------------|------------------------|------------------------------|
 | Web Base        | http://localhost:8080   | Servidor sin bastionar       |
-| Web Bastionado  | http://localhost:8085   | Servidor con cabeceras OWASP |
+| Web Bastionado  | http://localhost:8086   | Servidor con cabeceras OWASP |
 | Web Defensa     | http://localhost:8090   | Servidor con Rate Limiting   |
 | Juice Shop      | http://localhost:3000   | App vulnerable (pentesting)  |
 
